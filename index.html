@@ -3,10 +3,19 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
   <link rel="stylesheet" href="style/output.css">
-  <!-- <link rel="stylesheet" href="style/style.css"> -->
-  <title>Studio Estética</title>
+  <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+
+  <link rel="icon" type="image/x-icon" href="assets/image/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <title>Willian Garcia | Dev</title>
+
   <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,64 +30,407 @@
   <!-- <script src='main.js'></script> -->
 </head>
 <body>
-  <div>
-    <nav class="bg-white shadow w-full">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="./assets/image/logo.jpeg" alt="Logo" class="h-20">
+  <!-- HEADER -->
+  <nav class="bg-slate-900 shadow w-full">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="./assets/image/logo1.png" alt="Logo" class="h-16 md:h-20 hover:scale-110 duration-200 cursor-pointer">
+      </div>  
+      <!-- Menu Links -->
+      <ul class="hidden md:flex space-x-8 text-yellow-400/80">
+        <li>
+          <a href="#" class="hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">HOME</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">SOBRE</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">SERVIÇOS</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">BLOG</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">CONTATO</a>
+        </li>
+      </ul>
+
+      <!-- Menu Toggle (Mobile) -->
+      <div class="md:hidden">
+        <button @click="toggleMenu" aria-label="Abrir Menu" class="text-gray-400 focus:outline-none hover:text-gray-200 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div v-if="isMenuOpen" class="md:hidden mt-2 bg-slate-800 py-4 rounded-lg shadow-lg transition-all duration-300">
+      <ul class="space-y-4 text-yellow-400/80">
+        <li>
+          <a href="#" class="block py-2 px-4 hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">HOME</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">SOBRE</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">SERVIÇOS</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">BLOG</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:text-yellow-300 transition-colors duration-200 font-semibold text-lg">CONTATO</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SKILS -->
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <!-- Título da Seção -->
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Minhas Habilidades</h2>
+        <p class="mt-2 text-gray-600">Aqui estão as principais tecnologias e ferramentas que eu domino.</p>
+      </div>
+  
+      <!-- Grid de Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: HTML/CSS -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-html5 text-orange-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">HTML & CSS</h3>
+          <p class="text-gray-600 mt-2">Proficiente na criação de layouts responsivos com HTML5 e CSS3.</p>
         </div>
   
-        <!-- Menu Links -->
-        <ul class="hidden md:flex space-x-8 text-gray-500">
-          <li>
-            <a href="#" class="hover:text-black font-semibold text-lg">HOME</a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-black font-semibold text-lg">SOBRE NÓS</a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-black font-semibold text-lg">TRATAMENTOS</a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-black font-semibold text-lg">BLOG</a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-black font-semibold text-lg">CONTATO</a>
-          </li>
-        </ul>
+        <!-- Card 2: JavaScript -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-js-square text-yellow-500 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">JavaScript</h3>
+          <p class="text-gray-600 mt-2">Experiência sólida com ES6+, frameworks como Vue.js e Node.js.</p>
+        </div>
   
-        <!-- Menu Toggle (Mobile) -->
-        <div class="md:hidden">
-          <button @click="toggleMenu" class="text-gray-500 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
+        <!-- Card 3: Git -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-git-alt text-red-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Git & GitHub</h3>
+          <p class="text-gray-600 mt-2">Controle de versão e colaboração eficiente em projetos com Git.</p>
+        </div>
+  
+        <!-- Card 4: Vue.js -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-vuejs text-green-500 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Vue.js</h3>
+          <p class="text-gray-600 mt-2">Desenvolvimento de SPA e componentes reutilizáveis com Vue.js.</p>
+        </div>
+  
+        <!-- Card 5: Node.js -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-node text-green-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Node.js</h3>
+          <p class="text-gray-600 mt-2">Criação de APIs RESTful e aplicações de backend escaláveis.</p>
+        </div>
+  
+        <!-- Card 6: Tailwind CSS -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <i class="fab fa-css3-alt text-blue-500 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Tailwind CSS</h3>
+          <p class="text-gray-600 mt-2">Estilização rápida e moderna com o framework Tailwind CSS.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <!-- <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Nossos Serviços</h2>
+        <p class="mt-2 text-gray-600">Confira os serviços que oferecemos para ajudar seu negócio a crescer.</p>
+      </div>
+  
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        
+        
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-briefcase text-blue-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Consultoria Empresarial</h3>
+          <p class="text-gray-600 mt-2">Ajudamos você a otimizar processos e a maximizar seus resultados com nossa expertise.</p>
+        </div>
+  
+        
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-code text-green-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Desenvolvimento Web</h3>
+          <p class="text-gray-600 mt-2">Criamos websites modernos e responsivos para potencializar sua presença digital.</p>
+        </div>
+  
+        
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-bullhorn text-red-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Marketing Digital</h3>
+          <p class="text-gray-600 mt-2">Estratégias digitais para aumentar seu alcance e impactar seu público-alvo.</p>
+        </div>
+  
+        
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-shopping-cart text-yellow-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">E-commerce</h3>
+          <p class="text-gray-600 mt-2">Soluções completas para criar e gerenciar sua loja online de forma eficiente.</p>
+        </div>
+  
+       
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-headset text-purple-600 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Suporte Técnico</h3>
+          <p class="text-gray-600 mt-2">Oferecemos suporte técnico especializado para garantir o bom funcionamento do seu sistema.</p>
+        </div>
+  
+       
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+          <i class="fas fa-chart-line text-green-500 text-6xl mb-4"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Consultoria Financeira</h3>
+          <p class="text-gray-600 mt-2">Analisamos e otimizamos a saúde financeira do seu negócio com soluções personalizadas.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section> -->
+
+  <section id="services" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <!-- Título da Seção -->
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Nossos Serviços</h2>
+        <p class="mt-2 text-gray-600">Oferecemos soluções personalizadas para atender às suas necessidades digitais.</p>
+      </div>
+  
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Card 1: Desenvolvimento de Landing Page -->
+          <div class="swiper-slide bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center h-full">
+            <div class="flex items-center justify-center h-24 mb-4 text-blue-500">
+              <i class="fas fa-laptop-code fa-4x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Desenvolvimento de Landing Page</h3>
+            <p class="text-gray-600 mb-4">Criamos landing pages eficazes e otimizadas para conversão, com design moderno e foco em resultados.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold">Saiba Mais</a>
+          </div>
+  
+          <!-- Card 2: Sistema Web Personalizado -->
+          <div class="swiper-slide bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center h-full">
+            <div class="flex items-center justify-center h-24 mb-4 text-green-500">
+              <i class="fas fa-cogs fa-4x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Sistema Web Personalizado</h3>
+            <p class="text-gray-600 mb-4">Desenvolvemos sistemas web personalizados, adequados às suas necessidades e integrados com as melhores tecnologias do mercado.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold">Saiba Mais</a>
+          </div>
+  
+          <!-- Card 3: E-commerce -->
+          <div class="swiper-slide bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center h-full">
+            <div class="flex items-center justify-center h-24 mb-4 text-yellow-600">
+              <i class="fas fa-shopping-cart fa-4x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce</h3>
+            <p class="text-gray-600 mb-4">Soluções completas para criar e gerenciar sua loja online de forma eficiente.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold">Saiba Mais</a>
+          </div>
+  
+          <!-- Card 4: Suporte Técnico -->
+          <div class="swiper-slide bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center h-full">
+            <div class="flex items-center justify-center h-24 mb-4 text-purple-600">
+              <i class="fas fa-headset fa-4x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Suporte Técnico</h3>
+            <p class="text-gray-600 mb-4">Oferecemos suporte técnico especializado para garantir o bom funcionamento do seu sistema.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold">Saiba Mais</a>
+          </div>
+  
+          <!-- Card 5: Desenvolvimento Web -->
+          <div class="swiper-slide bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center h-full">
+            <div class="flex items-center justify-center h-24 mb-4 text-green-600">
+              <i class="fas fa-code fa-4x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Desenvolvimento Web</h3>
+            <p class="text-gray-600 mb-4">Criamos websites modernos e responsivos para potencializar sua presença digital.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold">Saiba Mais</a>
+          </div>
+  
+        </div>
+  
+        <!-- Adiciona botões de navegação (opcional) -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  <!-- SOBRE -->
+  <section class="container mx-auto py-16">
+    <div class="flex flex-col md:flex-row items-center bg-slate-100 p-8 rounded-lg shadow-xl">
+      <!-- Perfil e nome -->
+      <div class="md:w-1/2 flex flex-col items-center text-center mb-8 md:mb-0">
+        <img src="assets/image/perfil.jpg" alt="Foto perfil" class="rounded-full w-48 h-48 object-cover mx-auto mb-4 transition-transform duration-300 hover:scale-105">
+        <div class="flex flex-col items-center">
+          <strong class="font-mono text-2xl text-gray-800">Willian Garcia</strong>
+          <span class="text-gray-500 text-lg">Desenvolvedor Full Stack</span>
         </div>
       </div>
   
-      <!-- Mobile Menu -->
-      <div v-if="isMenuOpen" class="md:hidden mt-2">
-        <ul class="space-y-2 text-gray-600">
-          <li>
-            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">HOME</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">SOBRE NÓS</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">TRATAMENTOS</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">BLOG</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">CONTATO</a>
-          </li>
+      <!-- Sobre Mim -->
+      <section class="md:w-1/2 bg-white p-6 rounded-lg shadow-md">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold mb-2 text-gray-800">Sobre Mim</h2>
+          <h3 class="text-lg font-mono text-gray-600">Desenvolvedor de Software | Analista de Sistemas</h3>
+        </header>
+  
+        <ul class="list-none space-y-2 text-gray-700 leading-relaxed">
+          <li>🎓 <strong>Formação:</strong> Análise e Desenvolvimento de Sistemas pela Unipar</li>
+          <li>🚀 <strong>Interesses:</strong> Criar soluções inovadoras focadas em tecnologias web</li>
+          <li>💻 <strong>Experiência:</strong> Node.js, JavaScript, HTML, CSS e Fluig</li>
         </ul>
+  
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Sou um desenvolvedor apaixonado com uma sólida formação e experiência em diversas tecnologias web, como 
+          <strong>Vue.js, Node.js, JavaScript, HTML, CSS</strong> e <strong>Fluig</strong>. Minha paixão por resolver problemas com 
+          soluções criativas me motiva a sempre melhorar minhas habilidades e contribuir para o sucesso dos projetos em que participo.
+        </p>
+  
+        <p class="mt-2 text-gray-600 leading-relaxed">
+          Estou sempre buscando oportunidades para colaborar em projetos desafiadores que exijam inovação e trabalho em equipe.
+        </p>
+      </section>
+    </div>
+  </section>  
+
+  <section id="contact" class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <!-- Título da Seção -->
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Entre em Contato</h2>
+        <p class="mt-2 text-gray-600">Estamos aqui para ajudar! Preencha o formulário ou entre em contato pelos canais abaixo.</p>
       </div>
-    </nav>
-  </div>
+  
+      <!-- Grid de Contato -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Card de Informações de Contato -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Informações de Contato</h3>
+          <p class="text-gray-600">Entre em contato conosco para mais informações.</p>
+          <div class="mt-6">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-phone-alt text-blue-600 text-xl mr-4"></i>
+              <p class="text-gray-800">(44) 9 98811-3232</p>
+            </div>
+            <div class="flex items-center mb-4">
+              <i class="fas fa-envelope text-red-600 text-xl mr-4"></i>
+              <p class="text-gray-800">willian.garcia@wdndev.com.br</p>
+            </div>
+            <div class="flex items-center mb-4">
+              <i class="fas fa-map-marker-alt text-green-600 text-xl mr-4"></i>
+              <p class="text-gray-800">Rua Rio de Janeiro, 600 - Centro, PR</p>
+            </div>
+            <div class="flex space-x-4 mt-4">
+              <a href="https://github.com/Willianrsg" class="text-gray-500 hover:text-gray-800"><i class="fab fa-github text-2xl"></i></a>
+              <a href="https://www.linkedin.com/in/willian-rafael-75614731/" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin-in text-2xl"></i></a>
+              <a href="https://www.instagram.com/willian.rafa" class="text-pink-500 hover:text-pink-700"><i class="fab fa-instagram text-2xl"></i></a>
+              <a href="https://w.app/Wx1R7y" class="text-green-500 hover:text-green-700"><i class="fab fa-whatsapp text-2xl"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card de Formulário de Contato -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Envie uma Mensagem</h3>
+          <form action="#" method="POST" class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-600">Nome Completo</label>
+              <input type="text" id="name" name="name" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label for="email" class="block text-gray-600">E-mail</label>
+              <input type="email" id="email" name="email" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label for="message" class="block text-gray-600">Mensagem</label>
+              <textarea id="message" name="message" rows="4" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Enviar Mensagem</button>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto py-8">
+      <div class="flex flex-wrap justify-between items-center">
+  
+        <!-- Nome do negócio -->
+        <div class="w-full md:w-1/3 mb-4 md:mb-0 text-center md:text-left">
+          <h1 class="text-3xl font-bold">Seu Negócio</h1>
+        </div>
+  
+        <!-- Links de navegação -->
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+          <ul class="flex flex-col items-center md:items-start space-y-2">
+            <li><a href="#" class="hover:text-yellow-400 transition-colors duration-200">Home</a></li>
+            <li><a href="#" class="hover:text-yellow-400 transition-colors duration-200">Sobre</a></li>
+            <li><a href="#" class="hover:text-yellow-400 transition-colors duration-200">Serviços</a></li>
+            <li><a href="#" class="hover:text-yellow-400 transition-colors duration-200">Blog</a></li>
+            <li><a href="#" class="hover:text-yellow-400 transition-colors duration-200">Contato</a></li>
+          </ul>
+        </div>
+  
+        <!-- Endereço e Redes Sociais -->
+        <div class="w-full md:w-1/3 text-center md:text-left">
+          <p class="mb-1">Rua Rio de Janeiro, 600 - Sala</p>
+          <p class="mb-1">Centro, Marechal Candido Rondon - PR</p>
+          <p class="mb-4">(44) 9 98811-3232</p>
+  
+          <!-- Ícones de redes sociais -->
+          <div class="flex justify-center md:justify-start space-x-4 mt-4">
+            <a href="https://github.com/Willianrsg" aria-label="GitHub" class="text-white hover:text-gray-300 hover:scale-110 duration-200">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/willian-rafael-75614731/" aria-label="LinkedIn" class="text-blue-500 hover:text-blue-400 hover:scale-110 duration-200">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/willian.rafa" aria-label="Instagram" class="text-pink-500 hover:text-pink-400 hover:scale-110 duration-200">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@willianrafael04" aria-label="TikTok" class="text-white hover:text-gray-300 hover:scale-110 duration-200">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://w.app/Wx1R7y" aria-label="WhatsApp" class="text-green-500 hover:text-green-400 hover:scale-110 duration-200">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
 </body>
 </html>
