@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <link rel="stylesheet" href="style/output.css">
+  <!-- <link rel="stylesheet" href="style/style.css"> -->
+  <title>Studio Estética</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Studio Estética - O melhor" /> -->
+  <!-- <meta property="og:image" content="https://restaurante-tailwind.netlify.app/assets/hamb-1.png" /> -->
+  <!-- <meta property="og:description" content="O melhor local da cidade!" />
+  <meta property="og:site_name" content="Studio Estética" />
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+  <!-- <script src='main.js'></script> -->
+</head>
+<body>
+  <div>
+    <nav class="bg-white shadow w-full">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="./assets/image/logo.jpeg" alt="Logo" class="h-20">
+        </div>
+  
+        <!-- Menu Links -->
+        <ul class="hidden md:flex space-x-8 text-gray-500">
+          <li>
+            <a href="#" class="hover:text-black font-semibold text-lg">HOME</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-black font-semibold text-lg">SOBRE NÓS</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-black font-semibold text-lg">TRATAMENTOS</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-black font-semibold text-lg">BLOG</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-black font-semibold text-lg">CONTATO</a>
+          </li>
+        </ul>
+  
+        <!-- Menu Toggle (Mobile) -->
+        <div class="md:hidden">
+          <button @click="toggleMenu" class="text-gray-500 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Mobile Menu -->
+      <div v-if="isMenuOpen" class="md:hidden mt-2">
+        <ul class="space-y-2 text-gray-600">
+          <li>
+            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">HOME</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">SOBRE NÓS</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">TRATAMENTOS</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">BLOG</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-4 hover:text-black font-semibold text-lg">CONTATO</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
